@@ -6,7 +6,7 @@ const Register = () => {
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
     const navigate = useNavigate();
-    const vm_ip_addr = "http://128.2.205.21:5001/"	
+    const vm_ip_addr = "http://128.2.205.21/:5001/"	
 
     const handleSubmit = async (e) => {
         e.preventDefault();
