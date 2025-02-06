@@ -4,7 +4,7 @@ from pymongo import MongoClient
 from setup.timeslots import time_slots
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}}, supports_credentials=True)
+CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
 
 # Connect to MongoDB
 client = MongoClient("mongodb://localhost:27017/")
