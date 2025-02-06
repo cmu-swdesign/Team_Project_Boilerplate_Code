@@ -1,6 +1,7 @@
-# Full Stack React + Flask + MongoDB Application
+# Project Boilerplate Code
 
-This project is a simple **React frontend**, **Flask backend**, and **MongoDB database** that registers user emails.  
+This project is a simple **React frontend**, **Flask backend**, and **MongoDB database** that registers user emails and shows dummy available time slots.
+This project is provided to help students set up the basic infrastructure. Please feel free to use any other tech stack.  
 
 ---
 
@@ -19,7 +20,7 @@ Ensure you have the following installed on your system:
 ### **1️⃣ Start MongoDB**
 MongoDB is required for storing email IDs.
 
-#### **Install MongoDB (Only if not installed)**
+#### Install MongoDB (Only if not installed) [MacOS]
 ```sh
 brew tap mongodb/brew
 brew install mongodb-community
@@ -30,6 +31,9 @@ brew install mongodb-community
 brew services start mongodb-community
 ```
 
+### Installing MongoDB on Ubuntu
+Follow the steps given in the [link](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/)
+
 #### **Verify MongoDB is Running**
 ```sh
 mongosh
@@ -38,7 +42,6 @@ Inside MongoDB shell:
 ```js
 show dbs;
 ```
-
 ---
 
 ### **2️⃣ Setup and Start the Flask Backend**
@@ -48,6 +51,8 @@ The backend is built using **Flask** and uses **MongoDB**.
 ```sh
 cd backend
 ```
+
+### **For installing venv in Ubuntu** [link](https://www.arubacloud.com/tutorial/how-to-create-a-python-virtual-environment-on-ubuntu.aspx)
 
 #### **Create a Virtual Environment (Recommended)**
 ```sh
@@ -64,7 +69,7 @@ pip install -r requirements.txt
 ```sh
 python app.py
 ```
-✅ The backend should now be running at **`http://localhost:3001`**
+✅ The backend should now be running at **`http://localhost:5001`**
 
 ---
 
@@ -110,7 +115,7 @@ brew services start mongodb-community
 
 ### **Check If Flask Server is Running**
 ```sh
-curl -X OPTIONS http://localhost:3001/health
+curl -X OPTIONS http://localhost:5001/health
 ```
 
 ### **Check MongoDB Data**
