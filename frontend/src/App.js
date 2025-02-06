@@ -6,11 +6,12 @@ const Register = () => {
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
     const navigate = useNavigate();
+    const vm_ip_addr = "http://128.2.205.21:5001/"	
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post("http://128.2.205.21:5001/register", { email });
+            const response = await axios.post(vm_ip_addr + "register", { email });
             setMessage(response.data.message);
             if (response.status === 201 || response.status === 200) {
                 navigate("/home");
@@ -43,9 +44,9 @@ const Register = () => {
 
 const Home = () => {
     const [timeSlots, setTimeSlots] = useState([]);
-
+    const vm_ip_addr = "http://128.2.205.21:5001/"
     useEffect(() => {
-        axios.get("http://128.2.205.21:5001/time-slots")
+        axios.get(vm_ip_addr + "time-slots")
             .then(response => setTimeSlots(response.data))
             .catch(error => console.error("Error fetching time slots:", error));
     }, []);
