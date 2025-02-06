@@ -10,7 +10,7 @@ const Register = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post("http://localhost:5001/register", { email });
+            const response = await axios.post("http://128.2.205.21:5001/register", { email });
             setMessage(response.data.message);
             if (response.status === 201 || response.status === 200) {
                 navigate("/home");
@@ -45,7 +45,7 @@ const Home = () => {
     const [timeSlots, setTimeSlots] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:5001/time-slots")
+        axios.get("http://128.2.205.21:5001/time-slots")
             .then(response => setTimeSlots(response.data))
             .catch(error => console.error("Error fetching time slots:", error));
     }, []);

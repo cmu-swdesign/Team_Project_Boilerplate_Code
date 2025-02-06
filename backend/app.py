@@ -4,7 +4,7 @@ from pymongo import MongoClient
 from setup.timeslots import time_slots
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
+CORS(app, resources={r"/*": {"origins": "http://128.2.205.21:3000"}}, supports_credentials=True)
 
 # Connect to MongoDB
 client = MongoClient("mongodb://localhost:27017/")
@@ -27,7 +27,7 @@ initialize_time_slots()
 def register_email():
     if request.method == 'OPTIONS':  # Handle preflight request
         response = jsonify({'message': 'CORS Preflight Passed'})
-        response.headers.add("Access-Control-Allow-Origin", "http://localhost:3000")
+        response.headers.add("Access-Control-Allow-Origin", "http://128.2.205.21:3000")
         response.headers.add("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
         response.headers.add("Access-Control-Allow-Headers", "Content-Type")
         return response, 200
@@ -49,5 +49,5 @@ def get_time_slots():
     slots = list(time_slots_collection.find({}, {"_id": 0}))
     return jsonify(slots)
 
-if __name__ == '__main__':
-    app.run(debug=True, port=5001)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5001, debug=True)
