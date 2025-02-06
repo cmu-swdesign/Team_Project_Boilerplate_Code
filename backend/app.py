@@ -4,7 +4,7 @@ from pymongo import MongoClient
 from setup.timeslots import time_slots
 
 app = Flask(__name__)
-vm_ip_addr = "http://128.2.205.21:3000"
+vm_ip_addr = "http://127.0.0.1:3000"
 CORS(app, resources={r"/*": {"origins": vm_ip_addr}}, supports_credentials=True)
 
 # Connect to MongoDB
