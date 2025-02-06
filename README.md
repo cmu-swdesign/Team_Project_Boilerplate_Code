@@ -1,7 +1,15 @@
 # Project Boilerplate Code
 
 This project is a simple **React frontend**, **Flask backend**, and **MongoDB database** that registers user emails and shows dummy available time slots.
-This project is provided to help students set up the basic infrastructure. Please feel free to use any other tech stack.  
+This project is provided to help students set up the basic infrastructure. The following functionalities are provided:
+- A form to enter email id to access the homepage
+- homepage with dummy list of available slots
+- backend API `/register` to register the email in the database
+- backend API `/time-slots` to fetch a list of slots from the database
+- A MongoDB database for user email id and time-slots.
+
+
+**Please feel free to use any other tech stack.** 
 
 ---
 
