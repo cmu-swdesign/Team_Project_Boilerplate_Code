@@ -5,6 +5,9 @@ This project is provided to help students set up the basic infrastructure. Pleas
 
 ---
 
+### Note:
+Replace the IP address mentioned in `frontend/src/App.js` and `backend/app.py` with the IP address of your VM or `127.0.0.1`(for localhost)
+
 ## **📌 Prerequisites**
 Ensure you have the following installed on your system:
 
